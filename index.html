@@ -610,31 +610,29 @@
     </div>
 
     <!-- Time Slot Picker -->
-    <div class="field time-section" id="f-time">
-      <label>Step 2 — Choose Preferred Time Slot <span class="req">*</span></label>
-      <span class="hint">All times are in Gulf Standard Time (GST / UTC+4). Select the slot that best fits your schedule.</span>
-      <div class="time-grid" id="time-grid"><!-- injected by JS --></div>
-      <div class="field-error">Please select a preferred time slot.</div>
-    </div>
+   <div class="field time-section" id="f-time">
+  <label>Step 2 — Choose Preferred Time Slot <span class="req">*</span></label>
+  <span class="hint">All times are in Gulf Standard Time (GST / UTC+4). Select the slot that best fits your schedule.</span>
+  <div class="time-grid" id="time-grid"><!-- injected by JS --></div>
+  <div class="field-error">Please select a preferred time slot.</div>
+</div>
 
-    <div class="field">
-      <label>If None of the Above Works, What Timing Suits You?</label>
-      <span class="hint">e.g. "Any weekday evening after 5:30 PM in July" or "A Saturday morning in the second week of July"</span>
-      <input type="text" id="altTiming" placeholder="Describe a suitable time…">
-    </div>
+<div class="field">
+  <label>If None of the Above Works, What Timing Suits You?</label>
+  <span class="hint">e.g. "Any weekday evening after 5:30 PM" or "A Saturday morning session"</span>
+  <input type="text" id="altTiming" name="altTiming" placeholder="Describe a suitable time…">
+</div>
 
-    <div class="field">
-      <label>For University Seminars: University Address / Venue Details</label>
-      <span class="hint">Leave blank if you selected "Webinar" above. e.g. "UAE University, Al Barsha — auditorium seats 300"</span>
-      <input type="text" id="venueDetails" placeholder="University address and venue details…">
-    </div>
+<div class="field">
+  <label>For University Seminars: University Address / Venue Details</label>
+  <span class="hint">Leave blank if you selected "Webinar" above. e.g. "UAE University, Al Barsha — auditorium seats 300"</span>
+  <input type="text" id="venueDetails" name="venueDetails" placeholder="University address and venue details…">
+</div>
 
-    <div class="nav-row">
-      <button class="btn btn-outline" onclick="prevSection(2)">← Back</button>
-      <button class="btn btn-primary" onclick="nextSection(2)">Continue →</button>
-    </div>
-  </div>
-
+<div class="nav-row">
+  <button type="button" class="btn btn-outline" onclick="prevSection(2)">← Back</button>
+  <button type="button" class="btn btn-primary" onclick="nextSection(2)">Continue →</button>
+</div>
   <!-- ─────────────── SECTION 4: CONFIRM ─────────────── -->
   <div class="section-card" id="section-3">
     <div class="section-title">Declaration &amp; Submit</div>
