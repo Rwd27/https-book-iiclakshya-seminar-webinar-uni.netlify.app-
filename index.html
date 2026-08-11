@@ -473,7 +473,7 @@
     </div>
 
     <div class="field" id="f-email">
-      <label>Official University Email Address <span class="req">*</span></label>
+      <label>Official Email Address <span class="req">*</span></label>
       <span class="hint">e.g. placementcell@uaeuniveristy.ae — We will send booking confirmations here</span>
       <input type="email" id="emailAddr" placeholder="yourname@university.ae">
       <div class="field-error">Please enter a valid email address.</div>
@@ -507,11 +507,11 @@
       <label>What type of session are you requesting? <span class="req">*</span></label>
       <div class="choice-group" id="sesstype-group">
         <label class="choice-item">
-          <input type="radio" name="sessType" value="In-school seminar">
+          <input type="radio" name="sessType" value="In-House University Seminar">
           <span><strong>In-House University Seminar</strong> — Our expert counsellor visits your campus for a live session</span>
         </label>
         <label class="choice-item">
-          <input type="radio" name="sessType" value="Exclusive school webinar">
+          <input type="radio" name="sessType" value="Exclusive University Webinar">
           <span><strong>Exclusive University Webinar</strong> — A dedicated online Zoom session for your University only</span>
         </label>
       </div>
@@ -545,13 +545,12 @@
       <label>Topics of Interest <span class="req">*</span></label>
       <span class="hint">Select all that apply — our speaker will tailor the session content accordingly</span>
       <div class="choice-group" id="topics-group">
-        <label class="choice-item"><input type="checkbox" name="topics" value="CA – Chartered Accountancy (India / ICAI)"><span>CA — Chartered Accountancy (India / ICAI)</span></label>
-        <label class="choice-item"><input type="checkbox" name="topics" value="ACCA – Association of Chartered Certified Accountants"><span>ACCA — Association of Chartered Certified Accountants</span></label>
-        <label class="choice-item"><input type="checkbox" name="topics" value="CMA USA – Certified Management Accountant"><span>CMA USA — Certified Management Accountant</span></label>
-        <label class="choice-item"><input type="checkbox" name="topics" value="Global Career Oppportunities in Strategic Management"><span>Global Career Oppportunities in Strategic Management</span></label>
-        <label class="choice-item"><input type="checkbox" name="topics" value="Corporate Finance & Financial Analytics"><span>Corporate Finance & Financial Analytics</span></label>
-        <label class="choice-item"><input type="checkbox" name="topics" value="Global Career Opportunities in Accounts & Finance"><span>Global Career Opportunities in Accounts & Finance</span></label>
-        <label class="choice-item"><input type="checkbox" name="topics" value="Comparing CA vs ACCA vs CMA (which is right for me?)"><span>Comparing CA vs ACCA vs CMA — which is right for me?</span></label>
+<label class="choice-item"><input type="checkbox" name="topics" value="CA vs ACCA vs CMA USA: Choosing the Right Global Pathway"><span>CA vs ACCA vs CMA USA: Choosing the Right Global Pathway</span></label>
+<label class="choice-item"><input type="checkbox" name="topics" value="AI & Digital Transformation in Modern Accounting"><span>AI & Digital Transformation in Modern Accounting</span></label>
+<label class="choice-item"><input type="checkbox" name="topics" value="Corporate Finance, Investment Banking & Financial Analytics"><span>Corporate Finance, Investment Banking & Financial Analytics</span></label>
+<label class="choice-item"><input type="checkbox" name="topics" value="Strategic Business Leadership & CFO Pathways"><span>Strategic Business Leadership & CFO Pathways</span></label>
+<label class="choice-item"><input type="checkbox" name="topics" value="Global Employability & Career Trends in Finance"><span>Global Employability & Career Trends in Finance</span></label>
+<label class="choice-item"><input type="checkbox" name="topics" value="ESG Reporting & Sustainable Finance Operations"><span>ESG Reporting & Sustainable Finance Operations</span></label>
       </div>
       <div class="field-error">Please select at least one topic.</div>
     </div>
@@ -603,13 +602,13 @@
     <!-- Time Slot Picker -->
     <div class="field time-section" id="f-time">
       <label>Step 2 — Choose Preferred Time Slot <span class="req">*</span></label>
-      <span class="hint">All times are in Gulf Standard Time (GST / UTC+4). Select the slot that best fits your school schedule.</span>
+      <span class="hint">All times are in Gulf Standard Time (GST / UTC+4). Select the slot that best fits your schedule.</span>
       <div class="time-grid" id="time-grid"><!-- injected by JS --></div>
       <div class="field-error">Please select a preferred time slot.</div>
     </div>
 
     <div class="field">
-      <label>If None of the Above Works, What Timing Suits Your School?</label>
+      <label>If None of the Above Works, What Timing Suits You?</label>
       <span class="hint">e.g. "Any weekday evening after 5:30 PM in July" or "A Saturday morning in the second week of July"</span>
       <input type="text" id="altTiming" placeholder="Describe a suitable time…">
     </div>
@@ -856,12 +855,12 @@ function calNav(dir) {
 
 // ─── TIME SLOTS ──────────────────────────────────────────────────────────────
 const TIME_SLOTS = [
-  { id:'ts1', label:'8:00 AM – 9:30 AM',  desc:'Morning assembly slot',      status:'available' },
+  { id:'ts1', label:'8:00 AM – 9:30 AM',  desc:'Morning slot',      status:'available' },
   { id:'ts2', label:'9:30 AM – 11:00 AM', desc:'Mid-morning session',        status:'available' },
   { id:'ts3', label:'11:00 AM – 12:30 PM',desc:'Pre-lunch slot',             status:'few' },
   { id:'ts4', label:'2:00 PM – 3:30 PM',  desc:'Post-lunch afternoon',       status:'available' },
   { id:'ts5', label:'3:30 PM – 5:00 PM',  desc:'Late afternoon / free period',status:'available' },
-  { id:'ts6', label:'5:00 PM – 6:30 PM',  desc:'After-school / activity hrs',status:'few' },
+  { id:'ts6', label:'5:00 PM – 6:30 PM',  desc:'After-university hours / activity hrs',status:'few' },
   { id:'ts7', label:'6:00 PM – 7:30 PM',  desc:'Evening webinar slot',       status:'available' },
   { id:'ts8', label:'10:00 AM – 11:30 AM',desc:'Weekend morning (Sat only)', status:'available' },
   { id:'ts9', label:'11:00 AM – 12:30 PM',desc:'Weekend late morning (Sat)', status:'few' },
@@ -991,7 +990,7 @@ function buildSummary() {
   const rows = [
     ['Name',          document.getElementById('fullName').value],
     ['Designation',   (document.querySelector('input[name="designation"]:checked') || {}).value || '—'],
-    ['School',        document.getElementById('schoolName').value],
+    ['University',        document.getElementById('universityName').value],
     ['Email',         document.getElementById('emailAddr').value],
     ['Phone',         document.getElementById('phoneNum').value],
     ['Location',      document.getElementById('cityCountry').value || '—'],
@@ -1021,7 +1020,7 @@ function submitForm() {
     '_cc':               'renoldwilson@iiclakshya.com',
     'Full Name':         document.getElementById('fullName').value.trim(),
     'Designation':       (document.querySelector('input[name="designation"]:checked') || {}).value || '',
-    'School':            document.getElementById('schoolName').value.trim(),
+    'University':            document.getElementById('universityName').value.trim(),
     'Email':             document.getElementById('emailAddr').value.trim(),
     'Phone':             document.getElementById('phoneNum').value.trim(),
     'City & Country':    document.getElementById('cityCountry').value.trim(),
